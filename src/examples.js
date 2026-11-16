@@ -1,0 +1,88 @@
+// Synthetic practice messages. All names, numbers and addresses are invented;
+// suspicious domains use reserved-looking or clearly fake names.
+export const EXAMPLES = [
+  {
+    id: 'parcel',
+    kind: 'scam',
+    from: 'SMS · +1 (555) 013-2291',
+    text: 'USPS: Your package is on hold due to an incomplete address. Please update within 24 hours to avoid return to sender: https://usps.redelivery-help.top/track',
+    lesson: 'Couriers don’t text you links to fix addresses, and “usps” at the start of an address doesn’t make it USPS.',
+  },
+  {
+    id: 'bank-lock',
+    kind: 'scam',
+    from: 'Email · security@paypa1-support.com',
+    text: 'Dear Customer,\n\nWe detected unusual sign-in activity. Your PayPal account has been suspended. Verify your account immediately at http://paypa1-support.com/login or it will be closed permanently.',
+    lesson: 'The “1” in paypa1 is a number, not the letter L. Pressure + a look-alike link is the classic phishing shape.',
+  },
+  {
+    id: 'otp',
+    kind: 'scam',
+    from: 'WhatsApp · Unknown',
+    text: 'Hi, I accidentally sent my WhatsApp verification code to your number. Can you send me the code please? It’s urgent.',
+    lesson: 'Whoever has the code gets the account. Never forward a code you didn’t request.',
+  },
+  {
+    id: 'mum',
+    kind: 'scam',
+    from: 'SMS · +44 7700 900481',
+    text: 'Hi mum, this is my new number, I broke my phone. I need to pay a bill today but my banking app is locked. Can you send £640 by bank transfer? Don’t tell dad, I’ll explain later x',
+    lesson: 'A new number + money request + secrecy. Call your child on their old number before doing anything.',
+  },
+  {
+    id: 'giftcard',
+    kind: 'scam',
+    from: 'Email · ceo.office.mail@gmail.com',
+    text: 'Are you at your desk? I need you to buy 5 Google Play cards ($100 each) for a client gift right away. Scratch them and send me the codes. Keep this confidential until I announce it.',
+    lesson: 'No employer pays clients with gift cards. Check with your manager in person or on a known number.',
+  },
+  {
+    id: 'job',
+    kind: 'scam',
+    from: 'Telegram · Recruiter Anna',
+    text: 'Hello! We are hiring for a part-time job. Simple tasks: like YouTube videos and earn $300 a day. Work from home, flexible hours. Reply YES to start.',
+    lesson: 'Real jobs don’t pay hundreds a day to like videos. These “task” scams later ask you to deposit money.',
+  },
+  {
+    id: 'refund',
+    kind: 'scam',
+    from: 'Email · refunds@irs-gov-refund.xyz',
+    text: 'IRS NOTICE: You are eligible for a tax refund of $1,284.50. Claim your refund at irs-gov-refund.xyz before it expires today. A processing fee of $9.99 applies.',
+    lesson: 'Tax agencies don’t email you about refunds or charge fees to release them. Real IRS addresses end in irs.gov.',
+  },
+  {
+    id: 'support',
+    kind: 'scam',
+    from: 'Pop-up message',
+    text: 'WARNING: Your computer has been infected. Call Microsoft Support now at 1-800-555-0199. A technician will connect using AnyDesk to remove the virus.',
+    lesson: 'Microsoft doesn’t put phone numbers in pop-ups or ask to remote into your PC.',
+  },
+  {
+    id: 'real-delivery',
+    kind: 'legit',
+    from: 'Email · Amazon',
+    text: 'Hi Priya, your order of “Desk lamp” has shipped and should arrive Thursday. You can track it in Your Orders: https://www.amazon.com/gp/your-account/order-history',
+    lesson: 'Uses your name, no pressure, nothing to pay, and the link goes to amazon.com itself.',
+  },
+  {
+    id: 'real-code',
+    kind: 'legit',
+    from: 'SMS · Google',
+    text: 'G-482913 is your Google verification code. Don’t share it with anyone.',
+    lesson: 'A code you asked for, with a warning not to share it. The danger is only when someone asks you to send it to them.',
+  },
+  {
+    id: 'real-friend',
+    kind: 'legit',
+    from: 'SMS · Sam',
+    text: 'Running 10 mins late, grab us a table? Sorry!',
+    lesson: 'An ordinary message from someone you know, asking for nothing risky.',
+  },
+  {
+    id: 'real-netflix',
+    kind: 'legit',
+    from: 'Email · Netflix',
+    text: 'Hi Jordan, a new device signed in to your Netflix account from Chrome on Windows. If this was you, you don’t need to do anything. If not, open the Netflix app and go to Account > Security.',
+    lesson: 'Tells you to use the app yourself rather than tapping a link, and doesn’t ask for anything.',
+  },
+];

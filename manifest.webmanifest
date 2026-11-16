@@ -1,0 +1,11 @@
+{
+  "name": "Second Look",
+  "short_name": "Second Look",
+  "description": "Check a suspicious message privately, on your device.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#0f3d3e",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

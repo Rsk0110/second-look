@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Privacy by construction: the page may not send data anywhere (connect-src 'none', form-action 'none'). -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <title>Second Look: check a suspicious message</title>
+    <meta name="description" content="Paste a message you're unsure about and see the warning signs explained in plain language. Runs entirely on your device." />
+    <meta name="theme-color" content="#0f3d3e" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top">
+      <div class="wrap top-row">
+        <a class="brand" href="./" aria-label="Second Look home">
+          <img src="icon.svg" alt="" width="32" height="32" />
+          <span>Second Look</span>
+        </a>
+        <nav class="tabs" aria-label="Sections">
+          <button class="tab is-on" data-view="check" aria-current="page">Check a message</button>
+          <button class="tab" data-view="practice">Practice</button>
+          <button class="tab" data-view="about">How it works</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <!-- CHECK -->
+      <section id="view-check" class="view" aria-labelledby="check-h">
+        <div class="hero">
+          <h1 id="check-h">Not sure about a message?</h1>
+          <p class="lede">Paste it below for a calm, plain-language second opinion before you tap, pay or reply.</p>
+          <p class="privacy" role="note">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="currentColor" /></svg>
+            Private by design: checked on your device, never sent anywhere, works offline.
+          </p>
+        </div>
+
+        <form id="check-form" class="card input-card" autocomplete="off">
+          <label for="msg" class="label">Message, email or text</label>
+          <textarea id="msg" rows="7" spellcheck="false" placeholder="Paste the message here, including any links…"></textarea>
+          <div class="row">
+            <button type="submit" class="btn primary">Check message</button>
+            <button type="button" id="clear" class="btn ghost">Clear</button>
+            <span class="hint">or try:</span>
+            <div id="samples" class="chips" aria-label="Example messages"></div>
+          </div>
+        </form>
+
+        <div id="result" class="result" aria-live="polite" hidden></div>
+      </section>
+
+      <!-- PRACTICE -->
+      <section id="view-practice" class="view" aria-labelledby="practice-h" hidden>
+        <div class="hero">
+          <h1 id="practice-h">Train your eye</h1>
+          <p class="lede">Real-world style messages, all made up. Decide: scam or genuine? Then see what gave it away.</p>
+        </div>
+        <div id="quiz" class="card quiz"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="view-about" class="view prose" aria-labelledby="about-h" hidden>
+        <h1 id="about-h">How Second Look works</h1>
+        <p>
+          Second Look looks for the tactics scams rely on: <strong>pressure</strong> (act now, your account is locked),
+          an <strong>unusual request</strong> (gift cards, crypto, codes, remote access), and <strong>links that pretend to be someone else</strong>.
+          Each warning sign is highlighted in your message and explained in one or two sentences.
+        </p>
+        <h2>What it checks in links</h2>
+        <ul>
+          <li>Where the link <em>really</em> goes. In <code>paypal.com.account-help.net</code>, the real site is <code>account-help.net</code>.</li>
+          <li>Look-alike spellings (<code>paypa1</code>, <code>arnazon</code>) and disguised characters.</li>
+          <li>Links that don’t match the company the message claims to be from.</li>
+          <li>Shortened links, raw number addresses and “@” tricks.</li>
+        </ul>
+        <h2>Your privacy</h2>
+        <p>
+          Everything runs in your browser. The page’s security policy blocks it from sending data anywhere, so even we
+          can’t see what you paste. There are no accounts, no tracking and no analytics, and it keeps working without a connection.
+        </p>
+        <h2>What it can’t do</h2>
+        <ul>
+          <li>It can’t visit links or know whether a specific website is dangerous right now.</li>
+          <li>It can’t recognise every scam. New tricks appear all the time, so “no warning signs” is not a guarantee.</li>
+          <li>It doesn’t replace your bank, your provider or the police. If you’ve already paid or shared details, contact your bank straight away.</li>
+        </ul>
+        <p class="small">Open source · MIT licence. Built for SafeSpace Hacks 2026.</p>
+      </section>
+    </main>
+
+    <footer class="foot wrap">
+      <p>Second Look gives guidance, not guarantees. When in doubt, contact the organisation using a number or app you already trust.</p>
+    </footer>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
